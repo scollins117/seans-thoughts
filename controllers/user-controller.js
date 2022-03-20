@@ -89,7 +89,7 @@ getAllUser(req, res) {
   },
 
   //remove friend
-  removeReply({ params }, res) {
+  removeFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
       { $pull: { friends: params.friendID } },
