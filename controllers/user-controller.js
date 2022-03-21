@@ -61,13 +61,7 @@ getAllUser(req, res) {
   // delete User
   deleteUser({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No User found with this id!' });
-          return;
-        }
-        res.json(dbUserData);
-      })
+      .then(dbUserData => res.json(dbUserData))
       .catch(err => res.json(err));
   },
 
