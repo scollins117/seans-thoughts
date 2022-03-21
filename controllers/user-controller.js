@@ -74,7 +74,7 @@ getAllUser(req, res) {
   //add friend
   addFriend({ params, body }, res) {
     User.findOneAndUpdate(
-      { _id: params.UserId },
+      { _id: params.userId },
       { $push: { friends: params.friendId } },
       { new: true, runValidators: true }
     )
